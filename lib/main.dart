@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:meedu_demo/main_controller.dart';
-import 'package:signature/signature.dart';
+import 'package:meedu_demo/fashion_mnist/fashion_mnist.dart';
+import 'package:meedu_demo/fashion_mnist/fashion_mnist_ctrl.dart';
+import 'package:meedu_demo/text_classification.dart/text_classification.dart';
+import 'package:meedu_demo/text_classification.dart/text_classification_ctrl.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  Get.put(MainController());
+  Get.put(FashionMnistCtrl());
+  Get.put(TextClassificationController());
   runApp(const MyApp());
 }
 
@@ -32,38 +35,24 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final controller = Get.find<MainController>();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        actions: [
-          IconButton.filled(
-            onPressed: () {
-              controller.signatureController.clear();
-            },
-            icon: const Icon(
-              Icons.replay,
-              color: Colors.white,
-            ),
-          )
-        ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          controller.solve();
-        },
-        child: const Icon(Icons.rule_rounded),
-      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Signature(
-              controller: controller.signatureController,
-              height: Get.width,
-              backgroundColor: Colors.black,
+            ElevatedButton(
+              onPressed: () {
+                Get.to(const FashionMnist());
+              },
+              child: const Text('FashionMnist'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Get.to(const TextClassification());
+              },
+              child: const Text('Text classification'),
             ),
           ],
         ),

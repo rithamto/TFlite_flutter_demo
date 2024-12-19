@@ -9,7 +9,7 @@ import 'package:get/get.dart';
 import 'package:signature/signature.dart';
 import 'package:tflite_flutter/tflite_flutter.dart';
 
-class MainController extends GetxController {
+class FashionMnistCtrl extends GetxController {
   final SignatureController signatureController = SignatureController(
     penStrokeWidth: 5,
     penColor: Colors.green,
