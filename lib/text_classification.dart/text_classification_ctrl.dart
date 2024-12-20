@@ -11,10 +11,7 @@ class TextClassificationController extends GetxController {
   @override
   Future<void> onInit() async {
     interpreter = await Interpreter.fromAsset(
-      'assets/models/text_classification_model.tflite',
-    );
-    print(
-        "${interpreter.getInputTensor(0).shape} okela ${interpreter.getOutputTensor(0).shape}");
+        'assets/models/text_classification_model.tflite');
     super.onInit();
   }
 
@@ -26,7 +23,7 @@ class TextClassificationController extends GetxController {
     Get.showSnackbar(
       GetSnackBar(
         title: 'Result',
-        message: 'The result is: ${output[0][0].toStringAsFixed(0)}',
+        message: 'The result is: ${output[0][0].toStringAsFixed(2)}',
         duration: const Duration(seconds: 3),
       ),
     );
