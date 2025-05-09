@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:meedu_demo/face_aging/face_aging.dart';
 import 'package:meedu_demo/fashion_mnist/fashion_mnist.dart';
 import 'package:meedu_demo/fashion_mnist/fashion_mnist_ctrl.dart';
 import 'package:meedu_demo/text_classification.dart/text_classification.dart';
@@ -53,6 +54,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 Get.to(const TextClassification());
               },
               child: const Text('Text classification'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Get.to(const FaceAging());
+              },
+              child: const Text('Face Aging'),
             ),
           ],
         ),

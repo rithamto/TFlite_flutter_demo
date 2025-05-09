@@ -1,6 +1,6 @@
 name: meedu_demo
 description: "A new Flutter project."
-publish_to: 'none'
+publish_to: "none"
 version: 1.0.0+1
 
 environment:
@@ -13,8 +13,9 @@ dependencies:
     path: ./packages/flutter-tflite
   signature: ^5.5.0
   get: ^4.6.6
+  image_picker: ^1.1.2
 dependency_overrides:
-  image: ^4.0.13
+  image: ^4.1.7
 
 dev_dependencies:
   flutter_test:
@@ -30,3 +31,4 @@ flutter:
     - assets/models/model.tflite
     - assets/models/fashion_mnist_model.tflite
     - assets/models/text_classification_model.tflite
+    - assets/models/face_aging_model.tflite
